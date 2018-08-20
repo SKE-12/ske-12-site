@@ -54,6 +54,8 @@ jobs:
           command: |
             npm run build
             git add .
+            git config --global user.email "ske12@ku.th"
+            git config --global user.name "SKE12"
             git commit -m "Update Version $CIRCLE_SHA1"
             git push -u origin master
 
