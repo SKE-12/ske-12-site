@@ -39,7 +39,9 @@ jobs:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
           - v1-dependencies-
-      
+      - add_ssh_keys:
+          fingerprints:
+            - "$SSH_KEY"
       - run:
           name: Build and Deploy
           command: |
