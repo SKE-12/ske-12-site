@@ -57,11 +57,12 @@ workflows:
   test_and_deploy:
     jobs:
       - test
-      - deploy
-        filters:
-          branches:
-            only:
-              - master
-              
-        requires:
-          - test
+
+      - deploy:
+          filters:
+            branches:
+              only:
+                - master
+                
+          requires:
+            - test
