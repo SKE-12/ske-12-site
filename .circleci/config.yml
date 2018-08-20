@@ -1,5 +1,5 @@
 
-version: 2
+version: 2.0
 jobs:
   test:
     docker:
@@ -34,6 +34,11 @@ jobs:
 
     steps:
       - checkout
+
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          - v1-dependencies-
       
       - run:
           name: Process Deployment Directory
