@@ -52,6 +52,7 @@ jobs:
       - run:
           name: Build and Deploy
           command: |
+            ls
             npm run build
             git add .
             git status
