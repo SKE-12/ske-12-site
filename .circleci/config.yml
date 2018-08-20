@@ -1,0 +1,67 @@
+
+version: 2
+jobs:
+  test:
+    docker:
+      - image: circleci/node:10
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          - v1-dependencies-
+
+      - run: yarn install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      
+      - run: yarn lint
+
+      - run: yarn test
+  
+  deploy:
+    docker:
+      - image: circleci/node:10
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+      
+      - run:
+        name: Process Deployment Directory
+        command: |
+          mkdir public
+          cd public
+          git init
+          git remote add origin $TARGET_REPO
+          git pull origin master
+      
+      - run:
+        name: Build and Deploy
+        command: |
+          npm run build
+          git add .
+          git commit -m "Update Version $CIRCLE_SHA1"
+          git push -u origin master
+
+workflows:
+  version: 2
+  test_and_deploy:
+    jobs:
+      - test
+      - deploy
+        filters:
+          branches:
+            only:
+              - master
+              
+        requires:
+          - test
