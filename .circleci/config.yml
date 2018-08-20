@@ -36,21 +36,21 @@ jobs:
       - checkout
       
       - run:
-        name: Process Deployment Directory
-        command: |
-          mkdir public
-          cd public
-          git init
-          git remote add origin $TARGET_REPO
-          git pull origin master
+          name: Process Deployment Directory
+          command: |
+            mkdir public
+            cd public
+            git init
+            git remote add origin $TARGET_REPO
+            git pull origin master
       
       - run:
-        name: Build and Deploy
-        command: |
-          npm run build
-          git add .
-          git commit -m "Update Version $CIRCLE_SHA1"
-          git push -u origin master
+          name: Build and Deploy
+          command: |
+            npm run build
+            git add .
+            git commit -m "Update Version $CIRCLE_SHA1"
+            git push -u origin master
 
 workflows:
   version: 2
