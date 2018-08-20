@@ -30,7 +30,7 @@ jobs:
     docker:
       - image: circleci/node:10
 
-    working_directory: ~/repo
+    working_directory: ~/repo/public
 
     steps:
       - checkout
@@ -43,20 +43,19 @@ jobs:
       - run:
           name: Build and Deploy
           command: |
-            mkdir public
+            npm run build
             cd public
             git init
             git remote add origin $TARGET_REPO
-            git pull origin master
-            ls
-            npm run build
             git add .
             git status
             git config --global user.email "ske12@ku.th"
             git config --global user.name "SKE12"
             git commit -m "Update Version $CIRCLE_SHA1"
             git status
-            git push -u origin master  
+            git tag $CIRCLE_SHA1
+            git push -u origin $CIRCLE_SHA1
+            git push -u origin master -f
 
 workflows:
   version: 2
