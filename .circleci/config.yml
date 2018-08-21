@@ -35,8 +35,8 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "db:6c:ab:ce:63:f2:3e:65:16:8f:4f:14:5f:86:d8:8f"
-            
+          - "db:6c:ab:ce:63:f2:3e:65:16:8f:4f:14:5f:86:d8:8f"
+
       - checkout
 
       - restore_cache:
