@@ -1,25 +1,20 @@
+import App from 'core/App'
 import { AppContainer } from 'react-hot-loader'
-import AsyncApp from 'AsyncApp'
-import { injectGlobal } from 'styled-components'
+import { initGlobalStyles } from 'core/styles'
 import { render } from 'react-dom'
 
-injectGlobal`
-	body {
-		padding: 20px;
-		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	}
-`
+const load = () => {
+	initGlobalStyles()
+	const root = document.getElementById('root')
+	render((
+		<AppContainer>
+			<App />
+		</AppContainer>
+	), root)
+}
 
-const root = document.getElementById('root')
-const load = () => render((
-	<AppContainer>
-		<AsyncApp />
-	</AppContainer>
-), root)
-
-// This is needed for Hot Module Replacement
 if (module.hot) {
-	module.hot.accept('./App', load)
+	module.hot.accept('core/App', load)
 }
 
 load()

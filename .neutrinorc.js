@@ -1,7 +1,7 @@
 module.exports = {
   options: {
     output: 'public',
-    node_modules: 'src'
+    node_modules: 'src',
   },
   use: [
     ['@neutrinojs/standardjs',{
