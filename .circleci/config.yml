@@ -33,8 +33,6 @@ jobs:
     working_directory: ~/repo
 
     steps:
-      - add_ssh_keys:
-          fingerprints: "db:6c:ab:ce:63:f2:3e:65:16:8f:4f:14:5f:86:d8:8f"
 
       - checkout
 
@@ -56,8 +54,8 @@ jobs:
             git config --global user.name "SKE12"
             git commit -m "Update Version $CIRCLE_SHA1"
             git status
-            git tag $CIRCLE_SHA1
-            git push -u origin $CIRCLE_SHA1
+            git tag v-$CIRCLE_SHA1
+            git push -u origin v-$CIRCLE_SHA1
             git push -u origin master -f
 
 workflows:
