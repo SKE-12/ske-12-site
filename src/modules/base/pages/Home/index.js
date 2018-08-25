@@ -1,3 +1,4 @@
 import React from 'react'
+import Map from '../../components/map'
 
-export default () => <h1>This is Home</h1>
+export default () => <div><h1>This is home</h1> <Map /></div>
