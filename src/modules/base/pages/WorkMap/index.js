@@ -1,13 +1,12 @@
 import React from 'react'
 import Navbar from '../../../../common/components/navbar'
-import TableList from './tableList'
-export default class Home extends React.Component {
+
+export default class WorkMap extends React.Component {
 	render () {
 		return (
 			<div>
 				<Navbar />
-				<h1>This is Home</h1>
-				<TableList />
+				<h1>This is a map</h1>
 			</div>
 		)
 	}
