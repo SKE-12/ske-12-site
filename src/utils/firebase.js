@@ -1,14 +1,6 @@
 import firebase from 'firebase'
+import config from 'core/config'
 
-const config = {
-	apiKey: process.env.API_KEY,
-	authDomain: 'ske-workplace.firebaseapp.com',
-	databaseURL: 'https://ske-workplace.firebaseio.com',
-	projectId: 'ske-workplace',
-	storageBucket: 'ske-workplace.appspot.com',
-	messagingSenderId: '959189747042',
-}
-
-const firebaseInstance = firebase.initializeApp(config).firebase_
+const firebaseInstance = firebase.initializeApp(config.firebase).firebase_
 
 export default firebaseInstance
