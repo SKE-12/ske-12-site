@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 module.exports = {
   options: {
     output: 'public',
@@ -23,5 +25,13 @@ module.exports = {
       }
     ],
     '@neutrinojs/jest',
+    ['@neutrinojs/env', [
+      'FIRE_API_KEY',
+      'FIRE_AUTH_DOMAIN',
+      'FIRE_DB_URL',
+      'FIRE_PROJECT_ID',
+      'FIRE_STOREAGE_BUCKET',
+      'FIRE_MSGS_ID',
+    ]]
   ],
 }
