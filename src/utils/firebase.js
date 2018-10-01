@@ -1,7 +1,11 @@
 import firebase from 'firebase'
 
 const config = {
+<<<<<<< HEAD
 	apiKey: process.env.API_KEY,
+=======
+	apiKey: 'AIzaSyBfnLTtCTrOGmB_9LspF2oOzVB4cHi6Geg',
+>>>>>>> master
 	authDomain: 'ske-workplace.firebaseapp.com',
 	databaseURL: 'https://ske-workplace.firebaseio.com',
 	projectId: 'ske-workplace',
