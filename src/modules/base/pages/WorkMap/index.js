@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../../../../common/components/navbar'
+import Navbar from '../../../../common/components/Navbar'
 
 export default class WorkMap extends React.Component {
 	render () {
