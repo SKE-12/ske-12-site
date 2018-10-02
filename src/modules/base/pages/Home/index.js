@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../../../../common/components/Navbar'
+import Navbar from 'common/components/Navbar'
 import TableList from './tableList'
 export default class Home extends React.Component {
 	render () {

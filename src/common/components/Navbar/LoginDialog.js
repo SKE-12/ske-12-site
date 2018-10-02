@@ -1,6 +1,6 @@
 import React from 'react'
 import { Dialog, Form, Input, Button } from 'element-react'
-import firebase from '../../../utils/firebase'
+import firebase from 'utils/firebase'
 
 export default class LoginDialog extends React.Component {
 	constructor (props) {

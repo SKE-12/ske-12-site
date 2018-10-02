@@ -14,3 +14,17 @@ FIRE_DB_URL | Firebase Database URL |
 FIRE_PROJECT_ID | Firebase Project ID |
 FIRE_STOREAGE_BUCKET | Firebase Storage Bucket URL |
 FIRE_MSGS_ID | Firebase Message Sender ID |
+
+### Import
+
+We already setup this project to use absolute path import! Please use it! Because it is better way to do descriptive programming. However using `./` is acceptable.
+
+#### ❌ Don't
+```js
+import '../../styles/navbar.css'
+```
+
+#### ✅ Do
+```js
+import 'common/styles/navbar.css'
+```
