@@ -1,7 +1,7 @@
 import React from 'react'
 import { Menu } from 'element-react'
 import LoginDialog from './LoginDialog'
-import '../../styles/navbar.css'
+import 'common/styles/navbar.css'
 import 'element-theme-default'
 export default class Navbar extends React.Component {
 	constructor (props) {
