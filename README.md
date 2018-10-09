@@ -19,6 +19,8 @@ FIRE_MSGS_ID | Firebase Message Sender ID |
 
 We already setup this project to use absolute path import! Please use it! Because it is better way to do descriptive programming. However using `./` is acceptable.
 
+ps. We implemented `jsconfig.json`, so jumping to each file can be done easily by press `ctrl+click`.
+
 #### ❌ Don't
 ```js
 import '../../styles/navbar.css'
