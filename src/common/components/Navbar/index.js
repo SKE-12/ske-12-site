@@ -1,8 +1,9 @@
 import React from 'react'
 import { Menu } from 'element-react'
 import LoginDialog from './LoginDialog'
-import 'common/styles/navbar.css'
 import 'element-theme-default'
+import { RightMenuItem } from './styled'
+
 export default class Navbar extends React.Component {
 	constructor (props) {
 		super(props)
@@ -25,7 +26,7 @@ export default class Navbar extends React.Component {
 				<Menu theme='dark' defaultActive='1' className='el-menu-demo' mode='horizontal' onSelect={this.changePage.bind(this)}>
 					<Menu.Item index='1'>List</Menu.Item>
 					<Menu.Item index='2'>Map</Menu.Item>
-					<Menu.Item className='PullRight' index='9'>Login</Menu.Item>
+					<RightMenuItem index='9'>Login</RightMenuItem>
 				</Menu>
 				<LoginDialog loginVisibility={this.state.loginVisibility} />
 			</div>

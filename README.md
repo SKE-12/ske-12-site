@@ -30,3 +30,32 @@ import '../../styles/navbar.css'
 ```js
 import 'common/styles/navbar.css'
 ```
+
+### Styling
+
+`CSS in JS` is seem to be great way to do styling in React Application. Because we can avoid duplicate class name which can be happen in CSS file. `Styled-components` is the `CSS in JS` library that we use.
+
+#### ❌ Don't
+```js
+import 'common/styles/navbar.css'
+```
+
+#### ❌ Don't
+```jsx
+<span style={{ color: 'red' }}>SKE 12</span>
+```
+
+#### ✅ Do
+```js
+import styled from 'styled-components'
+
+export const RedText = styled.span`
+    color: red;
+`
+```
+
+```jsx
+import { RedText } from './styled'
+
+<RedText>SKE 12 </RedText>
+```
