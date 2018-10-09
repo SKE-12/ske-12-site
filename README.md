@@ -47,7 +47,7 @@ import 'common/styles/navbar.css'
 
 #### ✅ Do
 ```js
-import styled from 'styled-components
+import styled from 'styled-components'
 
 export const RedText = styled.span`
     color: red;
