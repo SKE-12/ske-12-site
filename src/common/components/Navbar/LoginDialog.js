@@ -25,14 +25,19 @@ export default class LoginDialog extends React.Component {
 
 	onSubmit (e) {
 		e.preventDefault()
-		firebase.auth().signInWithEmailAndPassword(this.state.loginForm.email, this.state.loginForm.password)
-			.then((value) => {
+		firebase
+			.auth()
+			.signInWithEmailAndPassword(
+				this.state.loginForm.email,
+				this.state.loginForm.password,
+			)
+			.then(value => {
 				console.log(value)
 				this.setState({
 					visibility: false,
 				})
 			})
-			.catch((error) => {
+			.catch(error => {
 				console.log('fail to login', error)
 				this.setState({
 					visibility: false,
@@ -43,20 +48,44 @@ export default class LoginDialog extends React.Component {
 	render () {
 		return (
 			<div>
-				<Dialog title='Login' visible={this.state.visibility} onCancel={() => this.setState({ visibility: false })}>
+				<Dialog
+					title='Login'
+					visible={this.state.visibility}
+					onCancel={() => this.setState({ visibility: false })}
+				>
 					<Dialog.Body>
-						<Form model={this.state.loginForm} onSubmit={this.onSubmit.bind(this)}>
+						<Form
+							model={this.state.loginForm}
+							onSubmit={this.onSubmit.bind(this)}
+						>
 							<Form.Item label='Email'>
-								<Input size='small' value={this.state.loginForm.email} onChange={this.onChange.bind(this, 'email')} />
+								<Input
+									size='small'
+									value={this.state.loginForm.email}
+									onChange={this.onChange.bind(this, 'email')}
+								/>
 							</Form.Item>
 							<Form.Item label='Password'>
-								<Input size='small' type='password' value={this.state.loginForm.password} onChange={this.onChange.bind(this, 'password')} />
+								<Input
+									size='small'
+									type='password'
+									value={this.state.loginForm.password}
+									onChange={this.onChange.bind(this, 'password')}
+								/>
 							</Form.Item>
 						</Form>
 					</Dialog.Body>
 					<Dialog.Footer>
-						<Button onClick={() => { this.setState({ visibility: false }) }}>Cancel</Button>
-						<Button type='primary' onClick={this.onSubmit.bind(this)}>Login</Button>
+						<Button
+							onClick={() => {
+								this.setState({ visibility: false })
+							}}
+						>
+							Cancel
+						</Button>
+						<Button type='primary' onClick={this.onSubmit.bind(this)}>
+							Login
+						</Button>
 					</Dialog.Footer>
 				</Dialog>
 			</div>

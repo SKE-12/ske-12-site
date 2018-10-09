@@ -14,10 +14,14 @@ export const initGlobalStyles = () => {
 			font-family: ${fontFamilies.highlight};
 		}
 
-		${[1, 2, 3, 4, 5, 6].map(size => `
+		${[1, 2, 3, 4, 5, 6]
+		.map(
+			size => `
 			h${size} {
 				font-size: ${40 - 4 * size}px;
 			}
-		`).join('')}
+		`,
+		)
+		.join('')}
 	`
 }

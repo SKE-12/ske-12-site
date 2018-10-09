@@ -1,5 +1,4 @@
-
 export default {
-	highlight: '\'Kanit\', sans-serif',
+	highlight: "'Kanit', sans-serif",
 	normal: 'sans-serif',
 }
