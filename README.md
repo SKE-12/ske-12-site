@@ -55,7 +55,7 @@ export const RedText = styled.span`
 ```
 
 ```jsx
-import { RedText } from './styled
+import { RedText } from './styled'
 
 <RedText>SKE 12 </RedText>
 ```
