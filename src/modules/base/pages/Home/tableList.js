@@ -35,8 +35,6 @@ export default class TableList extends React.Component {
 		}
 	}
 	render () {
-		return (
-			<Table columns={this.state.columns} data={this.state.mockData} />
-		)
+		return <Table columns={this.state.columns} data={this.state.mockData} />
 	}
 }

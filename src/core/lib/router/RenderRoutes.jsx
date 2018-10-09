@@ -3,7 +3,5 @@ import React from 'react'
 import { renderRoutes } from 'react-router-config'
 
 export default ({ routes }) => (
-	<BrowserRouter>
-		{ renderRoutes(routes) }
-	</BrowserRouter>
+	<BrowserRouter>{renderRoutes(routes)}</BrowserRouter>
 )

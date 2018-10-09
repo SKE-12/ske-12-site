@@ -1,4 +1,3 @@
-
 export default {
 	firebase: {
 		apiKey: process.env.FIRE_API_KEY,

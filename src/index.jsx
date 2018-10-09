@@ -6,11 +6,12 @@ import { render } from 'react-dom'
 const load = () => {
 	initGlobalStyles()
 	const root = document.getElementById('root')
-	render((
+	render(
 		<AppContainer>
 			<App />
-		</AppContainer>
-	), root)
+		</AppContainer>,
+		root,
+	)
 }
 
 if (module.hot) {

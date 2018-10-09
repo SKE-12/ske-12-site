@@ -1,4 +1,3 @@
-
 export default {
 	highlight: {
 		bold: 500,
