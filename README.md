@@ -1,5 +1,9 @@
 # SKE 12 Guide
 
+## Design
+
+Our design system is on [Figma](https://www.figma.com/file/YM9lLAGmNJsrrmhCd7eQ0GpN/SKE12?node-id=16%3A2).
+
 ## Development
 
 ### Environment
